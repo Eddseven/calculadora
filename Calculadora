@@ -1,3 +1,5 @@
+package com.mycompany.calculadora;
+
 import java.util.Scanner;
 
 public class Calculadora {
@@ -16,25 +18,20 @@ public class Calculadora {
         double resultado;
 
         switch (operador) {
-            case '+':
-                resultado = num1 + num2;
-                break;
-            case '-':
-                resultado = num1 - num2;
-                break;
-            case '*':
-                resultado = num1 * num2;
-                break;
-            case '/':
+            case '+' -> resultado = num1 + num2;
+            case '-' -> resultado = num1 - num2;
+            case '*' -> resultado = num1 * num2;
+            case '/' -> {
                 if (num2 == 0) {
                     System.out.println("Error: División por cero.");
                     return;
                 }
                 resultado = num1 / num2;
-                break;
-            default:
+            }
+            default -> {
                 System.out.println("Operador inválido.");
                 return;
+            }
         }
 
         System.out.println("El resultado es: " + resultado);
